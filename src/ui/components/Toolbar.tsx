@@ -32,6 +32,7 @@ export interface ToolbarProps {
   onSignature(): void;
   onClear(): void;
   onShortcuts(): void;
+  onAbout(): void;
 }
 
 const TOOLS: { tool: Tool; icon: IconName; label: string; key: string }[] = [
@@ -54,6 +55,7 @@ export function Toolbar({
   onSignature,
   onClear,
   onShortcuts,
+  onAbout,
 }: ToolbarProps): JSX.Element {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
@@ -292,6 +294,15 @@ export function Toolbar({
           onClick={onShortcuts}
         >
           <Icon name="question" />
+        </button>
+        <button
+          type="button"
+          className="icon-button"
+          aria-label="About & licences"
+          title="About & licences"
+          onClick={onAbout}
+        >
+          <span aria-hidden="true">ⓘ</span>
         </button>
         <button
           type="button"

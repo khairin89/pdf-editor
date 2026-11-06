@@ -1198,3 +1198,97 @@ kbd {
     max-height: 11rem;
   }
 }
+
+/* --- Phones (Android shell, narrow browsers) ------------------------------------- */
+
+@media (max-width: 700px) {
+  .app {
+    height: 100dvh;
+  }
+
+  .app-header {
+    gap: 0.5rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .logo {
+    height: 18px;
+    width: auto;
+  }
+
+  /* One scrollable row instead of wrapping onto four lines. */
+  .toolbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .toolbar > * {
+    flex: none;
+  }
+
+  .toolbar-group {
+    flex: none;
+  }
+
+  .toolbar-group + .toolbar-group {
+    padding-left: 0.5rem;
+  }
+
+  .toolbar-end {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    max-height: 8.5rem;
+  }
+
+  .properties-panel {
+    max-height: 7.5rem;
+    overflow-y: auto;
+  }
+
+  .app-footer {
+    display: none;
+  }
+
+  /* The toolbar now scrolls, which would clip an absolutely-positioned
+     dropdown; pin it to the viewport instead. */
+  .menu-popover {
+    position: fixed;
+    top: 6.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: 0;
+    max-width: none;
+    max-height: 60dvh;
+    overflow-y: auto;
+  }
+}
+
+/* --- About & licences ------------------------------------------------------------ */
+
+.about-dialog p {
+  margin: 0 0 0.6rem;
+}
+
+.about-heading {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.about-notices {
+  max-height: 50dvh;
+  overflow: auto;
+  margin: 0;
+  padding: 0.6rem;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}

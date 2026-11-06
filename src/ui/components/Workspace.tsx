@@ -14,11 +14,12 @@ import { PropertiesPanel } from './PropertiesPanel';
 import { Sidebar } from './Sidebar';
 import { Toolbar } from './Toolbar';
 import { InsertDialog } from './dialogs/InsertDialog';
+import { AboutDialog } from './dialogs/AboutDialog';
 import { ShortcutsDialog } from './dialogs/ShortcutsDialog';
 import { SignatureDialog } from './dialogs/SignatureDialog';
 import { SplitDialog } from './dialogs/SplitDialog';
 
-type DialogName = 'split' | 'insert' | 'signature' | 'shortcuts' | null;
+type DialogName = 'split' | 'insert' | 'signature' | 'shortcuts' | 'about' | null;
 
 export function Workspace(): JSX.Element {
   const [dialog, setDialog] = useState<DialogName>(null);
@@ -34,6 +35,7 @@ export function Workspace(): JSX.Element {
         onInsert={() => setDialog('insert')}
         onSignature={() => setDialog('signature')}
         onShortcuts={() => setDialog('shortcuts')}
+        onAbout={() => setDialog('about')}
         onClear={() => {
           const state = useEditorStore.getState();
           const docState = selectActiveDocument(state);
@@ -58,6 +60,7 @@ export function Workspace(): JSX.Element {
       <InsertDialog open={dialog === 'insert'} onClose={close} />
       <SignatureDialog open={dialog === 'signature'} onClose={close} />
       <ShortcutsDialog open={dialog === 'shortcuts'} onClose={close} />
+      <AboutDialog open={dialog === 'about'} onClose={close} />
     </div>
   );
 }

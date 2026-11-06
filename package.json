@@ -18,9 +18,17 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "tauri": "tauri",
+    "android:init": "tauri android init",
+    "android:dev": "tauri android dev",
+    "android:build:debug": "tauri android build --debug --apk",
+    "notices": "node scripts/gen-notices.mjs"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2.12.4",
+    "@tauri-apps/plugin-dialog": "^2.8.4",
+    "@tauri-apps/plugin-fs": "^2.7.1",
     "@tiptap/core": "^3.27.4",
     "@tiptap/pm": "^3.27.4",
     "@tiptap/react": "^3.27.4",
@@ -36,6 +44,7 @@
     "@eslint/js": "^10.0.1",
     "@rsbuild/core": "^2.1.4",
     "@rsbuild/plugin-react": "^2.1.0",
+    "@tauri-apps/cli": "^2.12.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",

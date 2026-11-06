@@ -62,7 +62,7 @@ async function assembleAndDownload(
       progressHandler(),
     );
     if (!bytes) throw new Error('Export produced no document.');
-    downloadPdf(bytes, fileName);
+    await downloadPdf(bytes, fileName);
   });
 }
 
@@ -91,7 +91,7 @@ export async function printDocument(): Promise<void> {
     const opened = await openPrintDialog(url);
     if (!opened) {
       URL.revokeObjectURL(url);
-      downloadPdf(bytes, fileName);
+      await downloadPdf(bytes, fileName);
       throw new Error(
         'The print view was blocked by the browser — the PDF was downloaded instead; print it from your PDF viewer.',
       );
@@ -174,7 +174,7 @@ export async function exportPagesAsZip(): Promise<void> {
       name: `${base}_page_${index + 1}.pdf`,
       bytes,
     }));
-    downloadZip(await pdfWorker.zip(files), `${base}_pages.zip`);
+    await downloadZip(await pdfWorker.zip(files), `${base}_pages.zip`);
   });
 }
 
