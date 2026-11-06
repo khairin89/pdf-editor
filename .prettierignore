@@ -6,3 +6,4 @@ docs/
 public/
 src-tauri/target/
 src-tauri/gen/
+public/licenses.txt

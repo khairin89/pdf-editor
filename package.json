@@ -22,7 +22,8 @@
     "tauri": "tauri",
     "android:init": "tauri android init",
     "android:dev": "tauri android dev",
-    "android:build:debug": "tauri android build --debug --apk"
+    "android:build:debug": "tauri android build --debug --apk",
+    "notices": "node scripts/gen-notices.mjs"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.12.4",
