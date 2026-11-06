@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "PDF Editor",
+  "productName": "KertPDF",
   "version": "2.7.0",
   "identifier": "my.edu.uitm.pdfeditor",
   "build": {
@@ -10,7 +10,7 @@
     "beforeBuildCommand": "pnpm build"
   },
   "app": {
-    "windows": [{ "title": "PDF Editor", "width": 1200, "height": 800 }],
+    "windows": [{ "title": "KertPDF", "width": 1200, "height": 800 }],
     "security": { "csp": null }
   },
   "bundle": {

@@ -72,7 +72,7 @@ function AppInner(): JSX.Element {
             height={24}
           />
         </a>
-        <h1 className="app-title">PDF Editor</h1>
+        <h1 className="app-title">KertPDF</h1>
         <span className="privacy-badge" title="All processing happens locally in your browser">
           <Icon name="lock" size={13} />
           100% local
